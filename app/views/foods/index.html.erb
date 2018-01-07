@@ -1,0 +1,7 @@
+All Foods
+
+<%= form_tag("/foods", method: "GET") do %>
+	<%= label_tag(:food, "Search for a food:") %>
+	<%= text_field_tag(:q) %>
+	<%= submit_tag %>
+<% end %>
