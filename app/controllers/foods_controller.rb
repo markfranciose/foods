@@ -16,8 +16,9 @@ class FoodsController < ApplicationController
   end
 
   def index
+		# MPF-todo - will need to write a pagination method
 		if params[:food]
-			@foods = Food.search(params[:food])
+			@foods = Food.search(params)
 		else
 			@foods = Food.all
 		end
