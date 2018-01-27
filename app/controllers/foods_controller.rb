@@ -16,5 +16,10 @@ class FoodsController < ApplicationController
   end
 
   def index
+		if params[:food]
+			@foods = Food.search(params[:food])
+		else
+			@foods = Food.all
+		end
   end
 end
