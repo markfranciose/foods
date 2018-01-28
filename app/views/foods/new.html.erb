@@ -1,3 +1,19 @@
 Create a new food
 
-
+<!-- Can also just do form_for @food, rails will check food.new_record? -->
+<!-- and select the correct path and method -->
+<%= form_for @food, url: {action: "create"}, html: {class: "create-food-form"} do |f| %>
+	<%= f.text_field :name %>
+	<%= label_tag :name  %><br>
+	<%= f.text_field :calories %>
+	<%= label_tag :calories %><br>
+	<%= f.text_field :protein%>
+	<%= label_tag :protein%><br>
+	<%= f.text_field :carbs %>
+	<%= label_tag :carbs %><br>
+	<%= f.text_field :fiber %>
+	<%= label_tag :fiber %><br>
+	<%= f.text_field :size_const %>
+	<%= label_tag :size_const, "Grams" %>
+	<%= f.submit "Create new food"%>
+<% end %>

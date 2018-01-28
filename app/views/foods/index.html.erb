@@ -2,6 +2,19 @@ All Foods
 
 <%= form_tag("/foods", method: "GET") do %>
 	<%= label_tag(:food, "Search for a food:") %>
-	<%= text_field_tag(:q) %>
+	<%= text_field_tag(:food) %>
+	<%= check_box_tag(:protein_positive) %>
+	<%= label_tag(:protein_positive, "only show protein positive foods") %>
+	<%= radio_button_tag(:number, "five") %>
+	<%= label_tag(:number_five, "five results per page") %>
+	<%= radio_button_tag(:number, "ten") %>
+	<%= label_tag(:number_ten, "ten results per page") %>
+	<%= number_field(:max_cal, :calories, in: 0..500, step: 50) %>
+	<%= label_tag(:max_cal, "max calories per serving")%>
 	<%= submit_tag %>
+<% end %>
+<br>
+<br>
+<% @foods.each do |food| %>
+	<%= food.name %><br>
 <% end %>
